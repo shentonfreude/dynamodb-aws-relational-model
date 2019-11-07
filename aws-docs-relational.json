@@ -1,0 +1,341 @@
+{
+  "ModelName": "aws-docs-relational",
+  "ModelMetadata": {
+    "Author": "",
+    "DateCreated": "Nov 07, 2019, 1:05 PM",
+    "DateLastModified": "Nov 07, 2019, 1:43 PM",
+    "Description": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-modeling-nosql-B.html"
+  },
+  "DataModel": [
+    {
+      "TableName": "aws-docs-relational",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "PK",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SK",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "Data",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Bucket",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "StartDate",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "EmployeeName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "ManagerID",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "SalesRepID",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "WAREHOUSE1",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "WAREHOUSE2",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "TranslatedName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "OrderTotal",
+          "AttributeType": "S"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "GSI1",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "SK",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "Data",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "GSI2",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "Bucket",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "Data",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "PK": {
+            "S": "HR-EMPLOYEE1"
+          },
+          "SK": {
+            "S": "EMPLOYEE1"
+          },
+          "Data": {
+            "S": "John Smith"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-EMPLOYEE1"
+          },
+          "SK": {
+            "S": "QUOTA-2017-Q1"
+          },
+          "Data": {
+            "S": "5000"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-EMPLOYEE1"
+          },
+          "SK": {
+            "S": "HR-CONFIDENTIAL"
+          },
+          "Data": {
+            "S": "2015-11-08"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-EMPLOYEE1"
+          },
+          "SK": {
+            "S": "WA|SEATTLE"
+          },
+          "Data": {
+            "S": "B01|F07|A27|R05"
+          },
+          "EmployeeName": {
+            "S": "John Smith"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-EMPLOYEE1"
+          },
+          "SK": {
+            "S": "J-AM3"
+          },
+          "Data": {
+            "S": "Principal Account Manager"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-EMPLOYEE1"
+          },
+          "SK": {
+            "S": "JH-AM2"
+          },
+          "Data": {
+            "S": "Senior Account Manager"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-EMPLOYEE1"
+          },
+          "SK": {
+            "S": "JH-AM1"
+          },
+          "Data": {
+            "S": "Account Manager"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-REGION1"
+          },
+          "SK": {
+            "S": "PNW"
+          },
+          "Data": {
+            "S": "Pacific Northwest Territory"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-COUNTRY1"
+          },
+          "SK": {
+            "S": "USA"
+          },
+          "Data": {
+            "S": "United States"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-LOCATION1"
+          },
+          "SK": {
+            "S": "WA|SEATTLE"
+          },
+          "Data": {
+            "S": "Seattle, Washington"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-JOB1"
+          },
+          "SK": {
+            "S": "J-AM3"
+          },
+          "Data": {
+            "S": "Principal Account Manager"
+          }
+        },
+        {
+          "PK": {
+            "S": "HR-DEPARTMENT1"
+          },
+          "SK": {
+            "S": "COMMERCIAL"
+          },
+          "Data": {
+            "S": "Commercial Sales"
+          },
+          "ManagerID": {
+            "S": "EMPLOYEE2"
+          }
+        },
+        {
+          "PK": {
+            "S": "OE-CUSTOMER1"
+          },
+          "SK": {
+            "S": "CUSTOMER1"
+          },
+          "Data": {
+            "S": "ACE Building Supplies"
+          }
+        },
+        {
+          "PK": {
+            "S": "OE-ORDER1"
+          },
+          "SK": {
+            "S": "CUSTOMER1"
+          },
+          "Data": {
+            "S": "OPEN#2019_08_11"
+          },
+          "Bucket": {
+            "S": "RND(0,N)=13"
+          },
+          "SalesRepID": {
+            "S": "EMPLOYEE1"
+          }
+        },
+        {
+          "PK": {
+            "S": "OE-ORDER1"
+          },
+          "SK": {
+            "S": "EMPLOYEE1"
+          },
+          "Data": {
+            "S": "OPEN#2018_08_11"
+          },
+          "OrderTotal": {
+            "S": "2500"
+          }
+        },
+        {
+          "PK": {
+            "S": "OE-ORDER1"
+          },
+          "SK": {
+            "S": "PRODUCT1"
+          },
+          "Data": {
+            "S": "OPEN#2018_08_11"
+          },
+          "Bucket": {
+            "S": "RND(0,N)=2"
+          }
+        },
+        {
+          "PK": {
+            "S": "OE-PRODUCT1"
+          },
+          "SK": {
+            "S": "PRODUCT1"
+          },
+          "Data": {
+            "S": "Quickcrete Cement - 50 lb bag"
+          },
+          "WAREHOUSE1": {
+            "S": "InventoryQty"
+          },
+          "WAREHOUSE2": {
+            "S": "InventoryQty"
+          }
+        },
+        {
+          "PK": {
+            "S": "OE-PRODUCT1"
+          },
+          "SK": {
+            "S": "PNW"
+          },
+          "Data": {
+            "S": "Pacific Northwest"
+          },
+          "TranslatedName": {
+            "S": "TRANSLATED_NAME"
+          }
+        },
+        {
+          "PK": {
+            "S": "OE-WAREHOUSE"
+          },
+          "SK": {
+            "S": "PNW"
+          },
+          "Data": {
+            "S": "Building Supplies"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      }
+    }
+  ]
+}
